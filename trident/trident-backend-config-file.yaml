@@ -1,0 +1,15 @@
+apiVersion: trident.netapp.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: trident-backend-svm0-file
+spec:
+  version: 1
+  backendName: svm0-file
+  storageDriverName: ontap-nas
+  managementLIF: 10.10.220.101
+  dataLIF: 10.10.220.103
+  svm: svm0
+  credentials:
+    name: backend-tbc-ontap-san-secret
+  defaults:
+    exportPolicy: default

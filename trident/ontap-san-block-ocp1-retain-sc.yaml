@@ -1,0 +1,13 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ontap-san-block-svm0-retain
+parameters:
+  backendType:      "ontap-san"
+  sanType:          "nvme"
+  storagePools:     "svm0-nvme:.*"    # tie to the 'svm0-file' backend
+  provisioningType: "thin"
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
+allowVolumeExpansion: true
+provisioner: csi.trident.netapp.io

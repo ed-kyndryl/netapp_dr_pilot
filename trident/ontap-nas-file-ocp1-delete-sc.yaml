@@ -1,0 +1,15 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ontap-nas-file-svm0-delete
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+parameters:
+  backendType:      "ontap-nas"
+  storagePools:     "svm0-rt1-file:.*"    # tie to the 'svm0-file' backend
+  provisioningType: "thin"
+  media:            "ssd"
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+allowVolumeExpansion: true
+provisioner: csi.trident.netapp.io
