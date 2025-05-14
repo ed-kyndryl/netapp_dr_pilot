@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: famous-quotes-db
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: ontap-san-block-svm11-delete
+  resources:
+    requests:
+      storage: 1Gi
