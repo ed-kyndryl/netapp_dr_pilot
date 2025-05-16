@@ -1,0 +1,39 @@
+apiVersion: protect.trident.netapp.io/v1
+kind: AppVault
+metadata:
+  name: ontap-s3-trident-protect-src-bucket13
+  namespace: trident-protect
+spec:
+  providerConfig:
+    azure:
+      accountName: ''
+      bucketName: ''
+      endpoint: ''
+    gcp:
+      bucketName: ''
+      projectID: ''
+    s3:
+      bucketName: bucket13
+      endpoint: s3-svm13.edskii.online
+      rootCA: |
+        -----BEGIN CERTIFICATE-----
+        MIIDFDCCAfygAwIBAgIUcrR8+KgRNNIsRp7WMboKCFePvCgwDQYJKoZIhvcNAQEL
+        ................................................................
+        eznXA1JgxI7HdWP7QMPDYrRjzBahTbpvNo9VFz+KRw1GynrJyUeqe/7Tz3F5Hmn2
+        WWMxdogbAALgdIVce+JVYVq6qrurLmg5
+        -----END CERTIFICATE-----
+      secure: 'true'
+      skipCertValidation: 'false'
+  providerCredentials:
+    accessKeyID:
+      valueFromSecret:
+        key: accessKeyID
+        name: s3-bucket13-creds
+    secretAccessKey:
+      valueFromSecret:
+        key: secretAccessKey
+        name: s3-bucket13-creds
+  providerType: OntapS3
+status:
+  state: Available
+  uid: d1d65ddd-f30e-4829-a1c1-b7eaad40648c
