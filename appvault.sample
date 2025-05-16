@@ -14,7 +14,7 @@ spec:
       projectID: ''
     s3:
       bucketName: bucket13
-      endpoint: s3-svm13.edskii.online
+      endpoint: s3-svm13.example.com
       rootCA: |
         -----BEGIN CERTIFICATE-----
         MIIDFDCCAfygAwIBAgIUcrR8+KgRNNIsRp7WMboKCFePvCgwDQYJKoZIhvcNAQEL
