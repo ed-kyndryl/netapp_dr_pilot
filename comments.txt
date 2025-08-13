@@ -1,0 +1,21 @@
+0. Intro Demo : I think the audio and slide are a bit out of sync until the part of what is not covered in the demo. Should we change the Intro slide to match with the Audio ? I can create a slide, let me know.
+1. App Overview Demo: 0.02 - The slide vanishes pretty fast. See if you can add a pause and maybe some audio describing the text in the slide. Something like “You will see a sample application deployed in OCP sandbox2 cluster. You will see the Application web interface, Storage classes and label applied”
+Ed, to match with the slide in 0:02 see if you want to show Trident Protect version installed, and show that App Vault has already been setup with bucket x (and perhaps no data on it currently - you can omit no data if data is already on it)
+2. Protection Demo - 0.35 - Audio says only the most recent snapshots are retained. However we have retention policies per Resiliency tier to retain snapshots for say 72 hours. We also said we keep 96 snapshots etc.
+0:56 - Audio says “In our case, it’s just the Persistent Volume”. Should this be PVC ? If I’m not mistaken, the labels match to PVC and protect the PVC which inturn protect the PV.
+3:14 - Giving a 3-4 second pause would be good here to show that AMR is created.
+3:26 - tells “Lets apply this resource to the cluster and verify”. But I think it’s already applied / deployed at 3:14.
+3:58 - Ideally we could show replicas are not running before showing the App using RO volume.
+4:20 - Says about scaling down replicas. But no screens for the same.
+ 
+ 
+3. Failover - 00-0:50. Love the walk through of what to see.
+In LLD, we have said Planned Failover and reverse replication as a singular process . Is there a way to show the slide I had updated for the same ?
+1:04 - Pls give a 3-4 second pause here for people to see the manifest.
+1:13 - showing Shutdown snapshot occurring is fantastic.
+1:38 - Anything we can do to highlight the source and destination shutdown snapshots are the same value ?
+1:57 - Great you are showing the scaling of replicas here.
+ 
+4: Reverse Resync.
+0:20 - Please add an audio statement “Note. This will happen automatically as part of a singular process for Planned failover.”
+	•		⁃	0:33 - Minor differences - couple of places we show manual application of yaml and do an oc apply. In this we show that manifest is directly applied through console.
